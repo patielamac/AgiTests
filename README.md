@@ -27,9 +27,7 @@ Caso 2 - Compreende em fazer uma busca em looping com palavras de uma lista, ond
     - repete até finalizar a lista com texto de pesquisa
     
 
-
 # Instalação
--------------
 
 Uma dependência para executar os testes é ter o `Robot Framework` e
 o `SeleniumLibrary` instalado e eles, por sua vez, exigem Python.
