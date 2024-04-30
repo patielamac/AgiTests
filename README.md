@@ -10,10 +10,22 @@ SeleniumLibrary é uma das muitas bibliotecas de teste que podem ser usadas com 
 
 o arquivo Agibank/agi_tests.robot contém a suite de testes incluindo os seguintes cenários:
 
-1
-2
+Caso 1 - Compreende em fazer uma busca simples com palavra chave pertinente ao tema do blog,com as seguintes ações:
+    - abre navegador
+    - localiza o campo de pesquisa
+    - insere texto para pesquisa
+    - gera pesquisa
+    - print do resultado
+    - fecha navegador
+Caso 2 - Compreende em fazer uma busca em looping com palavras de uma lista, onde serão realizadas buscas (com as palavras da lista) até finalizar o teste.
+    - abre navegador
+    - localiza o campo de pesquisa
+    - insere texto  para pesquisa
+    - gera pesquisa
+    - print do resultado
+    - repete até finalizar a lista com texto de pesquisa
+    
 
-(descrever onde ficam os prints da tela, etc)
 
 # Instalação
 -------------
@@ -22,6 +34,9 @@ Uma dependência para executar os testes é ter o `Robot Framework` e
 o `SeleniumLibrary` instalado e eles, por sua vez, exigem Python.
 As instruções de instalação do Robot Framework cobrem ambas instalações do Robot e do Python,
 A `SeleniumLibrary` tem suas próprias instruções de instalação.
+
+Deverá ser realizado uma atualização do Chrome Driver
+https://googlechromelabs.github.io/chrome-for-testing/
 
 Na prática é mais fácil instalar o Robot Framework e SeleniumLibrary
 junto com suas dependências usando o `pip package manager`.
@@ -41,26 +56,27 @@ Os testes estão localizados na pasta Agibank, você pode executar-los com o com
 
 # Usando browsers diferentes
 
-The browser that is used is controlled by ``${BROWSER}`` variable defined in
-`resource.robot`_ resource file. Firefox browser is used by default, but that
-can be easily overridden from the command line::
+O browser usado é controlado pela variável `${BROWSER}` definida em resource.robot
+O Chrome é usado por default, mas você pode usar outros como o exemplo abaixo:
 
-    robot --variable BROWSER:Chrome login_tests
-    robot --variable BROWSER:IE login_tests
+    robot --variable BROWSER:Chrome agi_tests.robot
+    robot --variable BROWSER:Firefox agi_tests.robot
 
-Consult SeleniumLibrary_ documentation about supported browsers.
+Consulte a documentação do SeleniumLibrary para verificar os browsers suportados.
 
-.. _Robot Framework: http://robotframework.org
-.. _SeleniumLibrary: https://github.com/robotframework/SeleniumLibrary
-.. _Python: http://python.org
-.. _pip: http://pip-installer.org
-.. _download: https://github.com/robotframework/WebDemo/archive/master.zip
-.. _source code: https://github.com/robotframework/WebDemo.git
-.. _valid_login.robot: https://github.com/robotframework/WebDemo/blob/master/login_tests/valid_login.robot
-.. _invalid_login.robot: https://github.com/robotframework/WebDemo/blob/master/login_tests/invalid_login.robot
-.. _gherkin_login.robot: https://github.com/robotframework/WebDemo/blob/master/login_tests/gherkin_login.robot
-.. _resource.robot: https://github.com/robotframework/WebDemo/blob/master/login_tests/resource.robot
-.. _report.html: http://robotframework.org/WebDemo/report.html
-.. _log.html: http://robotframework.org/WebDemo/log.html
-.. _Robot Framework User Guide: http://robotframework.org/robotframework/#user-guide
+Robot Framework: http://robotframework.org
+SeleniumLibrary: https://github.com/robotframework/SeleniumLibrary
+Python: http://python.org
+pip: http://pip-installer.org
+download: https://github.com/robotframework/WebDemo/archive/master.zip
+source code: https://github.com/robotframework/WebDemo.git
+valid_login.robot: https://github.com/robotframework/WebDemo/blob/master/login_tests/valid_login.robot
+invalid_login.robot: https://github.com/robotframework/WebDemo/blob/master/login_tests/invalid_login.robot
+gherkin_login.robot: https://github.com/robotframework/WebDemo/blob/master/login_tests/gherkin_login.robot
+resource.robot: https://github.com/robotframework/WebDemo/blob/master/login_tests/resource.robot
+report.html: http://robotframework.org/WebDemo/report.html
+log.html: http://robotframework.org/WebDemo/log.html
+Robot Framework User Guide: http://robotframework.org/robotframework/#user-guide
 
+# Checando log
+Após execução dos testes (Caso 1 e Caso 2) será gerado log e relatório com os resultados dos testes.
