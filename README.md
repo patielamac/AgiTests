@@ -17,6 +17,7 @@ Caso 1 - Compreende em fazer uma busca simples com palavra chave pertinente ao t
     - gera pesquisa
     - print do resultado
     - fecha navegador
+
 Caso 2 - Compreende em fazer uma busca em looping com palavras de uma lista, onde serão realizadas buscas (com as palavras da lista) até finalizar o teste.
     - abre navegador
     - localiza o campo de pesquisa
@@ -65,18 +66,15 @@ O Chrome é usado por default, mas você pode usar outros como o exemplo abaixo:
 Consulte a documentação do SeleniumLibrary para verificar os browsers suportados.
 
 Robot Framework: http://robotframework.org
+
 SeleniumLibrary: https://github.com/robotframework/SeleniumLibrary
+
 Python: http://python.org
+
 pip: http://pip-installer.org
-download: https://github.com/robotframework/WebDemo/archive/master.zip
-source code: https://github.com/robotframework/WebDemo.git
-valid_login.robot: https://github.com/robotframework/WebDemo/blob/master/login_tests/valid_login.robot
-invalid_login.robot: https://github.com/robotframework/WebDemo/blob/master/login_tests/invalid_login.robot
-gherkin_login.robot: https://github.com/robotframework/WebDemo/blob/master/login_tests/gherkin_login.robot
-resource.robot: https://github.com/robotframework/WebDemo/blob/master/login_tests/resource.robot
-report.html: http://robotframework.org/WebDemo/report.html
-log.html: http://robotframework.org/WebDemo/log.html
+
 Robot Framework User Guide: http://robotframework.org/robotframework/#user-guide
 
 # Checando log
-Após execução dos testes (Caso 1 e Caso 2) será gerado log e relatório com os resultados dos testes.
+Após execução dos testes (Caso 1 e Caso 2) será gerado um arquivo de relatório (report.html) e um arquivo de log (log.html).
+No arquivo de log você poderá expandir os nós checando o resultado de cada etapa do teste, os dois testes contém screenshots do resultado da tela de pesquisa. Os mesmos prints também ficarão disponíveis na pasta dos logs.
